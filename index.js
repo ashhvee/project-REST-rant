@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 // Require node modules
 const express = require('express')
 
@@ -8,5 +10,9 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.listen(3000)
+app.get('*', (req, res) => {
+    res.status(404).send('<h1>404 Page</h1>')
+})
+
+app.listen(process.env.PORT)
 
