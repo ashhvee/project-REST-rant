@@ -2,3 +2,39 @@ h1 {
     text-align: center;
     color: maroon;
 }
+
+nav {
+    background-color: rgba(83, 82, 83, 0.979);
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: rgb(182, 182, 182);
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    color: rgb(187, 29, 56);
+    text-decoration: none;
+}
+
+body {
+    background-color: maroon;
+    text-align: center;
+}
+
+main {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+}
