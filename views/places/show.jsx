@@ -11,35 +11,6 @@ function show (data) {
         comments = data.place.comments.map(c => {
             return (
                 <div className = 'border'>
-                <form action = './controllers/places.js' method = 'POST' />
-                    <label htmlFor = 'author'>Author</label>
-                        <input
-                            type = 'text'
-                            name = 'author'
-                            id = 'author'
-                        />
-                    <label htmlFor = 'content'>Content</label>
-                        <input
-                            type = 'text'
-                            name = 'content'
-                            id = 'content'
-                        />
-                    <label htmlFor = 'rant'>Rant</label>
-                        <input
-                            type = 'checkbox'
-                            name = 'rant'
-                            id = 'rant'
-                        />
-                    <label htmlFor = 'starRating'>Star Rating</label>
-                        <input
-                            type = 'number'
-                            name = 'starRating'
-                            id = 'starRating'
-                            min = '0'
-                            max = '5'
-                            step = '0.5'
-                        />
-                    <input type = 'submit' />
                     <h2 className = 'rant'>{c.rant ? 'Rant!' : 'Rave!'}</h2>
                     <h4>{c.content}</h4>
                     <h3>
@@ -67,7 +38,36 @@ function show (data) {
                 </div>
                 <h2>Comments</h2>
                     {comments}
-                    {/* <p>No comments yet!</p> */}
+                    <form action = {`/places/${data.place.id}/comment`} method = 'POST' >
+                    <label htmlFor = 'author'>Author</label>
+                        <input
+                            type = 'text'
+                            name = 'author'
+                            id = 'author'
+                        />
+                    <label htmlFor = 'content'>Content</label>
+                        <input
+                            type = 'text'
+                            name = 'content'
+                            id = 'content'
+                        />
+                    <label htmlFor = 'rant'>Rant</label>
+                        <input
+                            type = 'checkbox'
+                            name = 'rant'
+                            id = 'rant'
+                        />
+                    <label htmlFor = 'stars'>Star Rating</label>
+                        <input
+                            type = 'number'
+                            name = 'stars'
+                            id = 'stars'
+                            min = '0'
+                            max = '5'
+                            step = '0.5'
+                        />
+                        <input type = 'submit' value = 'comment' />
+                    </form>
                 </div>
                 <a href = {`/places/${data.id}/edit`} className = 'btn btn-warning'>
                     Edit
